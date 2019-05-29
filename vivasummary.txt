@@ -1,0 +1,14 @@
+1. Learnt how to design a front end for a web application using HTML,CSS and perform opeartions on events with javascript (usage of document object) as well as jQuery
+2. Then we made the backend for the web application using PHP, nodeJs in backend and hence performed the database operations.
+3. Enabled sending and receiving of data using JSON, also implemented AJAX functionality for making dynamic web applications by limiting the operations with JQuery.
+4. Learnt how MVC architecture works with node js. by creating views, front controller(Servlet) and controllers accordingly, and hence made a base for the 3 tier / MVC architecture.
+5. With the base of 3tier architecture in Mean stack module we're introduced to spring framework where the the same fuctionalites implemented in the previous module was implemented in Spring.
+6. Studied Design patterns and hence learned how to implement the same in the program using the Spring Framework.  
+7. Learnt how to use beans in the Spring framework, use of annotations instead of XML in the controller part, also the sending and receiving part of data using custom tags got clarified.
+8. Database connectivity using JDBC Template pattern is also made functional by implementing single/multi select, update, delete operation on database.
+9. Database connectivity with hibernate in the DAO layer is implemented in Employee Prototype using the ORM(Obeject Relational Model) as taught.  
+10. Additional tools of Maven is used for the dependency injection and it has been implemented by using both XML and Annotation for  performing the assignments given earlier. 
+11. log4j framework has been implemented to find out the logging(info,error, warn, fatal etc) information during the execution of a dynamic web application.
+12. Dynamic web application using spring boot has been made with the inclusion of both JDBC template and hibernate at DAO Layer.
+13. Once the sever side components are done we've learned how to implement the Angular framework on the front end with the NodeJS,Php as well as spring boot on the server side.
+14. In angular Multiple components with the multiple services has been made in the single application, with the help of ATM case study. 

@@ -1,6 +1,13 @@
+<nav>
+  <a routerLink="/AdminLogin" routerLinkActive="active">Admin </a>
+  <a routerLink="/EmployeeLogin" routerLinkActive="active">Employee </a>
+</nav>
+
 <p>
   admin-login works!
 </p>
+<div class="formmain">
+
 <form (submit)="LoginEmployee($event)">
     <div class="input">
       <label>Username</label>
@@ -13,4 +20,5 @@
     <div class="input">
       <input type="submit" value="Login">
     </div>
-  </form>
+</form>
+</div>

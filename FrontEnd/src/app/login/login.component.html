@@ -1,11 +1,13 @@
-
 <nav>
-  <a routerLink="/AdminLogin" routerLinkActive="active" >Admin </a>
-  <a routerLink="/EmployeeLogin" routerLinkActive="active">Employee </a>
+  <a (click)="Admin()">Admin </a>
+  <a (click)="Employee()">Employee </a>
 </nav>
 
+<p>
+{{user}} Login
+</p>
 
-<!-- <form (submit)="LoginEmployee($event)">
+<form (submit)="Login($event)">
     <div class="input">
       <label>Username</label>
       <input type="text">
@@ -17,5 +19,5 @@
     <div class="input">
       <input type="submit" value="Login">
     </div>
-</form> -->
+</form>
 

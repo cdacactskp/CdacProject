@@ -6,8 +6,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthgaurdGuard } from './authgaurd.guard';
-import { AdminLoginComponent } from './login/admin-login/admin-login.component';
-import { EmployeeLoginComponent } from './login/employee-login/employee-login.component';
+import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/employee-dashboard.component';
 
 const routes: Routes = [
   { 
@@ -20,17 +20,17 @@ const routes: Routes = [
   { 
     path: 'dashboard', component: DashboardComponent 
   },
+  { 
+    path: 'AdminDashboard', 
+    component: AdminDashboardComponent 
+  },
+  { 
+    path: 'EmployeeDashboard', 
+    component: EmployeeDashboardComponent 
+  },
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'AdminLogin',
-    component: AdminLoginComponent
-  },
-  {
-    path: 'EmployeeLogin',
-    component: EmployeeLoginComponent
   },
   {
     path: 'home',

@@ -6,8 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AdminLoginComponent } from './login/admin-login/admin-login.component';
-import { EmployeeLoginComponent } from './login/employee-login/employee-login.component';
+import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/employee-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import { EmployeeLoginComponent } from './login/employee-login/employee-login.co
     AdminComponent,
     HomeComponent,
     DashboardComponent,
-    AdminLoginComponent,
-    EmployeeLoginComponent
+    AdminDashboardComponent,
+    EmployeeDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -10,21 +10,38 @@ import { EmployeeService } from '../employee.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router,private employee:EmployeeService) { }
+  constructor(private router: Router, private employee: EmployeeService) { }
 
   ngOnInit() {
   }
-  
-  LoginEmployee(e){
-  console.log(e);
-  var username=e.target.elements[0].value;
-  var password=e.target.elements[1].value;
-  
-  if(username=='admin'&& password=='admin')
-  {
-    this.employee.setEmployeeLoggedIn();
-    this.router.navigate(['Dashboard'])
+
+  user = "Employee";
+
+  Admin() {
+    this.user = "Admin";
   }
-}
+
+  Employee() {
+    this.user = "Employee";
+  }
+
+  Login(form) {
+    console.log(form);
+
+    var username = form.target.elements[0].value;
+    var password = form.target.elements[1].value;
+    if (this.user == "Admin") {
+      if (username == 'admin' && password == 'admin') {
+        this.employee.setEmployeeLoggedIn();
+        this.router.navigate(['AdminDashboard'])
+      }
+    }else if(this.user == "Employee"){
+      if (username == 'emp' && password == 'emp') {
+        this.employee.setEmployeeLoggedIn();
+        this.router.navigate(['EmployeeDashboard'])
+      }
+    }
+
+  }
 
 }

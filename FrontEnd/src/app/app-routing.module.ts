@@ -10,6 +10,7 @@ import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/emplo
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { CustdetailsComponent } from './custdetails/custdetails.component';
 import { CardetailsComponent } from './cardetails/cardetails.component';
+import { TransHistoryComponent } from './trans-history/trans-history.component';
 
 const routes: Routes = [
   { 
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path:'cardetails',
     component:CardetailsComponent
+  } ,
+  {
+    path:'transhistory',
+    component:TransHistoryComponent
   } 
 ];
 

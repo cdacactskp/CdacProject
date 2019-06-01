@@ -26,7 +26,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   transHistory(){
-
+    this.router.navigate(['transhistory'])
   }
   addEmployee(){
     this.router.navigate(['empdetails'])

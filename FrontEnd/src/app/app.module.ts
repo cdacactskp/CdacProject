@@ -10,6 +10,7 @@ import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/emplo
 import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { CardetailsComponent } from './cardetails/cardetails.component';
 import { CustdetailsComponent } from './custdetails/custdetails.component';
+import { TransHistoryComponent } from './trans-history/trans-history.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CustdetailsComponent } from './custdetails/custdetails.component';
     EmployeeDashboardComponent,
     EmpdetailsComponent,
     CardetailsComponent,
-    CustdetailsComponent
+    CustdetailsComponent,
+    TransHistoryComponent
   ],
   imports: [
     BrowserModule,

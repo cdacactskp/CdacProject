@@ -1,7 +1,7 @@
 
 <h3>Customer Details</h3>
 <div class="container">
-<form (submit)="save($event)" (click)="Go()">
+<form (submit)="save($event)">
     <div class="row row-margin">
         <div class="col-sm-3">
   <div class="input">
@@ -47,7 +47,7 @@
                           
        <input class="button btn-success col-sm-6" type="submit" value="submit">
                             
-      <input class="button btn-success col-sm-6" type="button" value="Next">
+      <input class="button btn-success col-sm-6" type="button" value="Next" (click)="Go()" >
     
   </div>
 </form>

@@ -26,6 +26,6 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   transHistory(){
-
+    this.router.navigate(['transhistory'])
   }
 }

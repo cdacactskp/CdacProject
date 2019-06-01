@@ -11,3 +11,12 @@ h3
         margin:30px;
     
     }
+    div label{
+        display:block;
+    }
+    .row .smt
+{
+    margin-left:20%;
+    margin-right:20%;
+    
+}

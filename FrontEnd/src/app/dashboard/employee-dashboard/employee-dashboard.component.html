@@ -1,17 +1,21 @@
-<p>
+<h3>
   Employee Dashboard
-</p>
+</h3>
 
-<div>
-  <input type="button" value="New Transaction" onclick="newTrans()">
-  <br><br>
-  <input type="button" value="View Customer" onclick="viewCust()">
-  <br><br>
-  <input type="button" value="View Car Stock" onclick="viewCarStock()">
-  <br><br>
-  <input type="button" value="Transaction History" onclick="transHistory()">
+<div class="row row-margin">
+    <div class="col-sm-3">
+  <input type="button" class="btn btn-primary" value="New Transaction" (click)="newTrans()">
 </div>
-
+<div class="col-sm-3">
+  <input type="button" class="btn btn-primary" value="View Customer" (click)="viewCust()">
+</div>
+<div class="col-sm-3">
+  <input type="button" class="btn btn-primary" value="View Car Stock" (click)="viewCarStock()">
+</div>
+<div class="col-sm-3">
+  <input type="button" class="btn btn-primary" value="Transaction History" (click)="transHistory()">
+</div>
+</div>
 <p>
     <a routerLink="/">Go back</a>
 </p>

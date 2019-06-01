@@ -18,11 +18,11 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   viewCust(){
-
+    this.router.navigate(['custlisting'])
   }
 
   viewCarStock(){
-
+    this.router.navigate(['car-stock'])
   }
 
   transHistory(){
@@ -32,6 +32,6 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigate(['empdetails'])
   }
   vieEmpList(){
-
+    this.router.navigate(['emplisting'])
   }
 }

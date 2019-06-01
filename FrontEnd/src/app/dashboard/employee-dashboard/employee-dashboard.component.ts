@@ -18,11 +18,11 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   viewCust(){
-
+    this.router.navigate(['custlisting'])
   }
 
   viewCarStock(){
-
+    this.router.navigate(['car-stock'])
   }
 
   transHistory(){

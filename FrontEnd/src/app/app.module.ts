@@ -11,6 +11,9 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { CardetailsComponent } from './cardetails/cardetails.component';
 import { CustdetailsComponent } from './custdetails/custdetails.component';
 import { TransHistoryComponent } from './trans-history/trans-history.component';
+import { CarStockComponent } from './car-stock/car-stock.component';
+import { EmplistComponent } from './emplist/emplist.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { TransHistoryComponent } from './trans-history/trans-history.component';
     EmpdetailsComponent,
     CardetailsComponent,
     CustdetailsComponent,
-    TransHistoryComponent
+    TransHistoryComponent,
+    CarStockComponent,
+    EmplistComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,

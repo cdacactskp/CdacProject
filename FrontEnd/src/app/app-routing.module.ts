@@ -11,6 +11,9 @@ import { EmpdetailsComponent } from './empdetails/empdetails.component';
 import { CustdetailsComponent } from './custdetails/custdetails.component';
 import { CardetailsComponent } from './cardetails/cardetails.component';
 import { TransHistoryComponent } from './trans-history/trans-history.component';
+import { CarStockComponent } from './car-stock/car-stock.component';
+import { EmplistComponent } from './emplist/emplist.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const routes: Routes = [
   { 
@@ -56,6 +59,18 @@ const routes: Routes = [
   {
     path:'transhistory',
     component:TransHistoryComponent
+  },
+  {
+    path:'car-stock',
+    component:CarStockComponent
+  } ,
+  {
+    path:'emplisting',
+    component:EmplistComponent
+  }  ,
+  {
+    path:'custlisting',
+    component:CustomerListComponent
   } 
 ];
 

@@ -1,13 +1,16 @@
-<nav>
-  <a (click)="Admin()">Admin </a>
-  <a (click)="Employee()">Employee </a>
-</nav>
 
-<p>
-{{user}} Login
-</p>
+<div >
 
-<form (submit)="Login($event)">
+  <nav>
+    <a (click)="Admin()">Admin </a>
+    <a (click)="Employee()">Employee </a>
+  </nav>
+
+  <p>
+    {{user}} Login
+  </p>
+
+  <form (submit)="Login($event)">
     <div class="input">
       <label>Username</label>
       <input type="text">
@@ -19,5 +22,6 @@
     <div class="input">
       <input type="submit" value="Login">
     </div>
-</form>
+  </form>
 
+</div>

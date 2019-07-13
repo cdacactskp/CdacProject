@@ -15,6 +15,8 @@ import { CarStockComponent } from './car-stock/car-stock.component';
 import { EmplistComponent } from './emplist/emplist.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { SearchComponent } from './search/search.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { SearchComponent } from './search/search.component';
     CarStockComponent,
     EmplistComponent,
     CustomerListComponent,
-    SearchComponent
+    SearchComponent,
+    HeaderComponent,
+    FooterComponent
 
   ],
   imports: [

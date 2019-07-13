@@ -1,0 +1,28 @@
+
+.container
+{
+    margin-left:10%;
+    margin-right: 10%;
+}
+.row-margin{
+    margin:30px;
+
+}
+.row-margin div input{
+align-content: center;
+margin-left: 5%;
+}
+h2
+{
+    text-align:center;
+    text-decoration: underline;
+}
+.row .smt
+{
+    margin-left:20%;
+    margin-right:20%;
+    
+}
+div label{
+    display:block;
+}

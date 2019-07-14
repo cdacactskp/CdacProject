@@ -21,10 +21,6 @@ const routes: Routes = [
     component: HomeComponent 
   },
   { 
-    path: 'dashboard',
-    component: DashboardComponent 
-  },
-  { 
     path: 'AdminDashboard', 
     component: AdminDashboardComponent 
   },

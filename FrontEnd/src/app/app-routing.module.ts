@@ -18,7 +18,7 @@ import { SearchComponent} from './search/search.component';
 const routes: Routes = [
   { 
     path: '', 
-    component: LoginComponent 
+    component: HomeComponent 
   },
   { 
     path: 'dashboard',

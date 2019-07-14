@@ -5,11 +5,8 @@
     align-items: center;
 } */
 
-.main{
-    
-}
 
-nav a {
+/* nav a {
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
@@ -53,4 +50,15 @@ div.input input{
 
 div.input {
     margin-top: 20px;
+} */
+
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
 }

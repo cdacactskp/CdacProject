@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { EmployeeService } from 'app/services/employee.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,13 @@ import { EmployeeService } from 'app/services/employee.service';
 
 export class LoginComponent implements OnInit {
 
+  login = new BehaviorSubject(false);
+
   constructor(private router: Router, private employee: EmployeeService) { }
 
   ngOnInit() {
     console.log("login component");
-    
+    this.login.next(false);
   }
 
   user = "Employee";
@@ -37,15 +40,19 @@ export class LoginComponent implements OnInit {
 
     if (this.user == "Admin") {
       if (username == 'admin' && password == 'admin') {
-        this.employee.setAdminLoggedIn();
+        console.log("logging in admin");
         
-        this.router.navigate(['AdminDashboard'])
+        this.employee.setAdminLoggedIn();
+        this.login.next(true);
+        // this.router.navigate(['AdminDashboard']);
       }
     }else if(this.user == "Employee"){
       if (username == 'emp' && password == 'emp') {
-        this.employee.setEmployeeLoggedIn();
 
-        this.router.navigate(['EmployeeDashboard'])
+        console.log("logging in emp");
+        this.employee.setEmployeeLoggedIn();
+        this.login.next(true);
+        // this.router.navigate(['EmployeeDashboard']);
       }
     }
 

@@ -1,29 +1,41 @@
 <h3>
-    Admin Dashboard
+  Admin Dashboard
 </h3>
-  
-  <div class="row row-margin">
-    <div class="col-sm-4">
-    <input type="button"  class="btn btn-primary" value="Search Car" (click)="remEmp()">
-  </div>
-  <div class="col-sm-4">
-    <input type="button"  class="btn btn-primary" value="View Customer" (click)="viewCust()">
-  </div>
-  <div class="col-sm-4">
-    <input type="button"  class="btn btn-primary" value="View Car Stock" (click)="viewCarStock()">
-  </div>
-</div>
+
 <div class="row row-margin">
-    <div class="col-sm-4">
+  <div class="col-sm-2">
+    <input type="button" class="btn btn-primary" value="View Customer" (click)="viewCust()">
+  </div>
+  <div class="col-sm-2">
+    <input type="button" class="btn btn-primary" value="View Car Stock" (click)="viewCarStock()">
+  </div>
+  <div class="col-sm-2">
     <input type="button" class="btn btn-primary" value="Transaction History" (click)="transHistory()">
   </div>
-  <div class="col-sm-4">
-    <input type="button"  class="btn btn-primary" value="Add Employee" (click)="addEmployee()">
+  <div class="col-sm-2">
+    <input type="button" class="btn btn-primary" value="Add Employee" (click)="addEmployee()">
   </div>
-  <div class="col-sm-4">
-    <input type="button"  class="btn btn-primary" value="View Employee List" (click)="vieEmpList()">
+  <div class="col-sm-2">
+    <input type="button" class="btn btn-primary" value="View Employee List" (click)="vieEmpList()">
   </div>
 </div>
-<p>
-    <a routerLink="/">Go back</a>
-</p>
+
+<div class="row">
+  <div class="col-sm-4">
+    <app-search></app-search>
+  </div>
+  <div class=" col-sm-8">
+    <div *ngIf="showCust" >
+      <app-customer-list></app-customer-list>
+    </div>
+    <div *ngIf="showCarStock">
+      <app-car-stock></app-car-stock>
+    </div>
+    <div *ngIf="showTransHist">
+      <app-trans-history></app-trans-history>
+    </div>
+    <div *ngIf="showEmpList" class="col-sm">
+        <app-emplist></app-emplist>
+    </div>
+  </div>
+</div>

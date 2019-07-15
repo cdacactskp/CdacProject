@@ -16,6 +16,19 @@
   <input type="button" class="btn btn-primary" value="Transaction History" (click)="transHistory()">
 </div>
 </div>
+
+<div class="row" >
+  <div class="col-sm-4"><app-search></app-search></div>
+  <div *ngIf="showCust" class="col-sm-8">
+    <app-customer-list></app-customer-list>
+  </div>
+  <div *ngIf="showCarStock" class="col-sm-8">
+    <app-car-stock></app-car-stock>
+  </div>
+  <div *ngIf="showTransHist" class="col-sm-8">
+    <app-trans-history></app-trans-history>
+  </div>
+</div>
 <p>
     <a routerLink="/">Go back</a>
 </p>

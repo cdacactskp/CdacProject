@@ -15,10 +15,12 @@ import { CarStockComponent } from './car-stock/car-stock.component';
 import { EmplistComponent } from './emplist/emplist.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { SearchComponent} from './search/search.component';
+
 const routes: Routes = [
   { 
     path: '', 
-    component: HomeComponent 
+    redirectTo: "home", 
+    pathMatch: "full"
   },
   { 
     path: 'AdminDashboard', 
@@ -35,11 +37,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path:'Dashboard',
-    canActivate: [AuthgaurdGuard],
-    component:DashboardComponent
   },
   {
     path:'empdetails',

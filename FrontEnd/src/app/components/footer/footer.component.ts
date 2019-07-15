@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   }
 
   backClicked() {
-    javascript:history.go(-2);
+    javascript:history.go(-1);
   }
 
 }

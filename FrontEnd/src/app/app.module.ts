@@ -15,7 +15,7 @@ import { CarStockComponent } from './car-stock/car-stock.component';
 import { EmplistComponent } from './emplist/emplist.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { SearchComponent } from './search/search.component';
-import { HeaderComponent, ModalContentComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
@@ -38,8 +38,7 @@ import { ModalModule } from 'ngx-bootstrap';
     CustomerListComponent,
     SearchComponent,
     HeaderComponent,
-    FooterComponent,
-    ModalContentComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,7 @@ import { ModalModule } from 'ngx-bootstrap';
     ModalModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent,ModalContentComponent]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/car';
-import { ModeldataService } from '../modeldata.service';
+import { ModeldataService } from '../services/modeldata.service';
 import { Router } from '@angular/router';
 
 @Component({

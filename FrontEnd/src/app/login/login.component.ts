@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EmployeeService } from '../employee.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { EmployeeService } from 'app/services/employee.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private employee: EmployeeService) { }
 
   ngOnInit() {
+    console.log("login component");
+    
   }
 
   user = "Employee";
@@ -35,7 +37,7 @@ export class LoginComponent implements OnInit {
 
     if (this.user == "Admin") {
       if (username == 'admin' && password == 'admin') {
-        this.employee.setEmployeeLoggedIn();
+        this.employee.setAdminLoggedIn();
         
         this.router.navigate(['AdminDashboard'])
       }

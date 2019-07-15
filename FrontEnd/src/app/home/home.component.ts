@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModeldataService } from 'app/modeldata.service';
+import { ModeldataService } from 'app/services/modeldata.service';
 import { Car } from 'app/models/car';
 import { Router } from '@angular/router';
 

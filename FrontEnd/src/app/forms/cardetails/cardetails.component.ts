@@ -11,5 +11,8 @@ export class CardetailsComponent implements OnInit {
 
   ngOnInit() {
   }
+  backClicked() {
+    javascript:history.go(-1);
+  }
 
 }

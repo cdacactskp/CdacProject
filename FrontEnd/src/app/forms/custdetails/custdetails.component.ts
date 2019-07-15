@@ -19,4 +19,8 @@ export class CustdetailsComponent implements OnInit {
     Go(){
       this.router.navigate(['cardetails'])
     }
+    backClicked() {
+      javascript:history.go(-1);
+    }
+  
 }

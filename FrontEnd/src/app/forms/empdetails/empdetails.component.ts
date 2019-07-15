@@ -19,6 +19,9 @@ transactionhist(){}
 newtrans(){  
   this.router.navigate(['custdetails'])
 }
+backClicked() {
+  javascript:history.go(-1);
+}
 
 }
 

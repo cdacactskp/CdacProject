@@ -41,12 +41,12 @@ export class LoginComponent implements OnInit {
     if (this.user == "Admin") {
       if (username == 'admin' && password == 'admin') {
         console.log("logging in admin");
-        
+
         this.employee.setAdminLoggedIn();
         this.login.next(true);
         // this.router.navigate(['AdminDashboard']);
       }
-    }else if(this.user == "Employee"){
+    } else if (this.user == "Employee") {
       if (username == 'emp' && password == 'emp') {
 
         console.log("logging in emp");
@@ -55,7 +55,6 @@ export class LoginComponent implements OnInit {
         // this.router.navigate(['EmployeeDashboard']);
       }
     }
-
   }
 
 }

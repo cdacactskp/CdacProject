@@ -36,18 +36,20 @@ export class HeaderComponent implements OnInit {
 
   openModalWithComponent() {
 
-    this.bsModalRef = this.modalService.show(LoginComponent);
-    this.bsModalRef.content.login.subscribe(login =>{
-      if(login == true){
-        if(this.bsModalRef.content.user == "Admin"){
-          this.bsModalRef.hide();
-          this.router.navigate(['AdminDashboard']);
-        }else if(this.bsModalRef.content.user == "Employee"){
-          this.bsModalRef.hide();
-          this.router.navigate(['EmployeeDashboard']);
-        }
-      }
-    });
+    this.router.navigate(['']);
+    this.login = false;
+    // this.bsModalRef = this.modalService.show(LoginComponent);
+    // this.bsModalRef.content.login.subscribe(login =>{
+    //   if(login == true){
+    //     if(this.bsModalRef.content.user == "Admin"){
+    //       this.bsModalRef.hide();
+    //       this.router.navigate(['AdminDashboard']);
+    //     }else if(this.bsModalRef.content.user == "Employee"){
+    //       this.bsModalRef.hide();
+    //       this.router.navigate(['EmployeeDashboard']);
+    //     }
+    //   }
+    // });
     
   }
 

@@ -1,5 +1,42 @@
+<div class="bg-banner">
+<div class="row heigh">
+  <div class="col-sm-8">
+   
+  </div>
+  <div class="col-sm-4 " style="margin-top:10%;padding-top:5%;padding-bottom:5%;background-color: rgba(255, 255, 255, 0.8)">
+      <div class="container">
 
-<div class="container-fluid">
+          <nav>
+            <a (click)="Admin()">Admin </a>
+            <a (click)="Employee()">Employee </a>
+          </nav>
+        
+          <p>
+            {{user}} Login
+          </p>
+        
+          <form (submit)="Login($event)">
+            <div class="input">
+              <label>Username</label>
+              <input type="text">
+            </div>
+            <div class="input">
+              <label>Password</label>
+              <input type="password">
+            </div>
+            <div class="input">
+              <input type="submit" value="Login">
+            </div>
+          </form>
+        
+        </div>
+  </div>
+  <div>
+
+  </div>
+</div>
+</div>
+ <div class="container-fluid"> 
   <div class="col-sm-4">
     <div class="leftbox">
       <div class="row">
@@ -104,4 +141,4 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> 

@@ -39,10 +39,10 @@ export class ModeldataService {
 
     var status = this.result = [
 
-      new Employee(1001, "Rahul", "Manager", 234234234, "Indiranagar,Bangalore", "test@gmail.com", 45000, 38, "MBA"),
-      new Employee(1002, "Rohit", "Sr. Sales Executive", 987234234, "Koramangala,Bangalore", "test12@gmail.com", 30000, 28, "BBA"),
-      new Employee(1003, "Ramu", "Jr. Sales Executive", 7894234234, "Indiranagar,Bangalore", "qwerty@gmail.com", 25000, 24, "Bcom"),
-      new Employee(1004, "Ravi", "Employee", 234234234, "CV Raman nagar,Bangalore", "testing@gmail.com", 15000, 38, "HSC")
+      new Employee(1001, "Rahul", "Manager", 234234234, "Indiranagar,Bangalore", "test@gmail.com", 45000, 38, "MBA","",""),
+      new Employee(1002, "Rohit", "Sr. Sales Executive", 987234234, "Koramangala,Bangalore", "test12@gmail.com", 30000, 28, "BBA","",""),
+      new Employee(1003, "Ramu", "Jr. Sales Executive", 7894234234, "Indiranagar,Bangalore", "qwerty@gmail.com", 25000, 24, "Bcom","",""),
+      new Employee(1004, "Ravi", "Employee", 234234234, "CV Raman nagar,Bangalore", "testing@gmail.com", 15000, 38, "HSC","","")
     ]
     return status;
   }

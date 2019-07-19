@@ -20,22 +20,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-4">
-    <app-search></app-search>
-  </div>
-  <div class=" col-sm-8">
-    <div *ngIf="showCust" >
-      <app-customer-list></app-customer-list>
-    </div>
-    <div *ngIf="showCarStock">
-      <app-car-stock></app-car-stock>
-    </div>
-    <div *ngIf="showTransHist">
-      <app-trans-history></app-trans-history>
-    </div>
-    <div *ngIf="showEmpList" class="col-sm">
-        <app-emplist></app-emplist>
-    </div>
+<div class="row" >
+  <div class="col-sm-4"><app-search></app-search></div>
+  <div class="col-sm-8">
+    <section>
+      <router-outlet name="sub"></router-outlet>
+    </section>
   </div>
 </div>

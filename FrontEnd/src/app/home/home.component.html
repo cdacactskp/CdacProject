@@ -15,19 +15,19 @@
             {{user}} Login
           </p>
         
-          <form (submit)="Login($event)">
+          <div>
             <div class="input">
               <label>Username</label>
-              <input type="text">
+              <input #box1 (blur)="getUser(box1.value)" type="text">
             </div>
             <div class="input">
               <label>Password</label>
-              <input type="password">
+              <input #box2 (blur)="getPass(box2.value)" type="password">
             </div>
             <div class="input">
-              <input type="submit" value="Login">
+              <input type="submit" value="Login" (click)="Login()">
             </div>
-          </form>
+          </div>
         
         </div>
   </div>

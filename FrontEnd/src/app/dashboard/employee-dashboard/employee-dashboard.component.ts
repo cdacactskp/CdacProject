@@ -26,23 +26,14 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   viewCust(){
-    // this.router.navigate(['custlisting'])
-    this.showCust = true;
-    this.showCarStock = false;
-    this.showTransHist = false;
+    this.router.navigate(['EmployeeDashboard/cust'])
   }
 
   viewCarStock(){
-    // this.router.navigate(['car-stock'])
-    this.showCust = false;
-    this.showCarStock = true;
-    this.showTransHist = false;
+    this.router.navigate(['EmployeeDashboard/car'])
   }
 
   transHistory(){
-    // this.router.navigate(['transhistory'])
-    this.showCust = false;
-    this.showCarStock = false;
-    this.showTransHist = true;
+    this.router.navigate(['EmployeeDashboard/trans'])
   }
 }

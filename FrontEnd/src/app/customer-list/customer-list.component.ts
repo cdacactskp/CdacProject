@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ModeldataService} from "../services/modeldata.service";
-import { Car } from '../models/car';
 import { Customer } from '../models/customer';
+import { ConnectService } from 'app/services/connect.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,17 +9,21 @@ import { Customer } from '../models/customer';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-
+emp:Customer[];
   modeldata: Array<Customer>;
-  constructor(private modelService : ModeldataService) { }
+  constructor(private modelService : ModeldataService,private _connect:ConnectService) { }
 
   ngOnInit() {
-    this.modeldata=this.customerList();
-  }
+    return this._connect.Getcust().subscribe((data) => {
 
-  customerList()
-  {
-      return this.modelService.customerList();
+      console.log(data);
+
+      this.emp = data;
+  });
   }
+  // customerList()
+  // {
+  //     return this.modelService.customerList();
+  // }
 
 }

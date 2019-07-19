@@ -23,15 +23,90 @@ const routes: Routes = [
   },
   { 
     path: 'AdminDashboard', 
-    component: AdminDashboardComponent 
+    component: AdminDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: CarStockComponent,
+        outlet: 'sub'
+      }
+    ] 
+  },
+  { 
+    path: 'AdminDashboard/car', 
+    redirectTo:'AdminDashboard',
+    pathMatch:'full' 
+  },
+  { 
+    path: 'AdminDashboard/cust', 
+    component: AdminDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: CustomerListComponent,
+        outlet: 'sub'
+      }
+    ] 
+  },
+  { 
+    path: 'AdminDashboard/trans', 
+    component: AdminDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: TransHistoryComponent,
+        outlet: 'sub'
+      }
+    ] 
+  },
+  { 
+    path: 'AdminDashboard/emplist', 
+    component: AdminDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: EmplistComponent,
+        outlet: 'sub'
+      }
+    ] 
   },
   { 
     path: 'EmployeeDashboard', 
-    component: EmployeeDashboardComponent 
+    component: EmployeeDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: CarStockComponent,
+        outlet: 'sub'
+      }
+    ] 
   },
-  {
-    path: 'login',
-    component: LoginComponent
+  { 
+    path: 'EmployeeDashboard/car', 
+    redirectTo:'EmployeeDashboard',
+    pathMatch:'full' 
+  },
+  { 
+    path: 'EmployeeDashboard/cust', 
+    component: EmployeeDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: CustomerListComponent,
+        outlet: 'sub'
+      }
+    ] 
+  },
+  { 
+    path: 'EmployeeDashboard/trans', 
+    component: EmployeeDashboardComponent,
+    children: [
+      {
+        path: '',
+        component: TransHistoryComponent,
+        outlet: 'sub'
+      }
+    ] 
   },
   {
     path: 'home',
@@ -46,29 +121,9 @@ const routes: Routes = [
     component:CustdetailsComponent
   },
   {
-    path:'cardetails',
-    component:CardetailsComponent
-  } ,
-  {
-    path:'transhistory',
-    component:TransHistoryComponent
-  },
-  {
     path:'car-stock',
     component:CarStockComponent
-  } ,
-  {
-    path:'emplisting',
-    component:EmplistComponent
-  }  ,
-  {
-    path:'custlisting',
-    component:CustomerListComponent
-  } ,
-  {
-    path:'search',
-    component:SearchComponent
-  } 
+  }
 ];
 
 @NgModule({

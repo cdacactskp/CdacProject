@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/employee-dashboard.component';
 import { EmpdetailsComponent } from './forms/empdetails/empdetails.component';
@@ -19,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { ModalModule } from 'ngx-bootstrap';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    DashboardComponent,
     AdminDashboardComponent,
     EmployeeDashboardComponent,
     EmpdetailsComponent,
@@ -42,6 +41,7 @@ import { ModalModule } from 'ngx-bootstrap';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     ModalModule.forRoot()

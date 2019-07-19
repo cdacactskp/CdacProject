@@ -4,27 +4,40 @@ import { Car } from 'app/models/car';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { EmployeeService } from 'app/services/employee.service';
+import { ConnectService } from 'app/services/connect.service';
+import { Employee } from 'app/models/employee';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
+
   modeldata: Array<Car>;
   login = new BehaviorSubject(false);
-  constructor(private modelService : ModeldataService,private router:Router , private employee: EmployeeService) { }
-  
+  username: string;
+  password: string;
+  emp: Employee;
+
+
+  constructor(private modelService: ModeldataService,
+    private router: Router,
+    private employee: EmployeeService,
+    private _connect: ConnectService) { }
+
+
   ngOnInit() {
-    this.modeldata=this.call();
+    this.modeldata = this.call();
     //console.log("model data running");
   }
-  call()
-  {
-      return this.modelService.call();
+
+  call() {
+    return this.modelService.call();
   }
-  searchCar()
-  {
+
+  searchCar() {
     this.router.navigate(['search']);
   }
 
@@ -38,28 +51,38 @@ export class HomeComponent implements OnInit {
     this.user = "Employee";
   }
 
-  Login(form) {
-    console.log(form);
+  getUser(value: string){
+    this.username = value;
+  }
 
-    var username = form.target.elements[0].value;
-    var password = form.target.elements[1].value;
+  getPass(value : string){
+    this.password = value;
+  }
 
-    if (this.user == "Admin") {
-      if (username == 'admin' && password == 'admin') {
-        console.log("logging in admin");
+  Login() {
+    this._connect.Getlogin(this.username, this.password).subscribe((data) => {
 
-        this.employee.setAdminLoggedIn();
-        this.login.next(true);
-        this.router.navigate(['AdminDashboard']);
+      console.log(data);
+
+      this.emp = data;
+
+      if (this.user == "Admin") {
+        if (this.emp[0].type == "admin") {
+          console.log("logging in admin");
+
+          this.employee.setAdminLoggedIn();
+          this.login.next(true);
+          this.router.navigate(['AdminDashboard']);
+        }
+      } else if (this.user == "Employee") {
+        if (this.emp[0].type == "emp") {
+
+          console.log("logging in emp");
+          this.employee.setEmployeeLoggedIn();
+          this.login.next(true);
+          this.router.navigate(['EmployeeDashboard']);
+        }
       }
-    } else if (this.user == "Employee") {
-      if (username == 'emp' && password == 'emp') {
-
-        console.log("logging in emp");
-        this.employee.setEmployeeLoggedIn();
-        this.login.next(true);
-        this.router.navigate(['EmployeeDashboard']);
-      }
-    }
+    });
   }
 }

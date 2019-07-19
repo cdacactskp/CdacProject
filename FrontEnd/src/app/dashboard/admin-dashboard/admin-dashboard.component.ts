@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConnectService } from 'app/services/connect.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,19 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  showCust: boolean;
-  showCarStock: boolean;
-  showTransHist: boolean;
-  showEmpList : boolean;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private _connect:ConnectService) { }
 
   ngOnInit() {
     console.log("admin dashboard");
-    this.showCust = false;
-    this.showCarStock = true  ;
-    this.showTransHist = false;
-    this.showEmpList = false;
   }
 
   remEmp(){
@@ -28,27 +21,15 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   viewCust(){
-    // this.router.navigate(['custlisting'])
-    this.showCust = true;
-    this.showCarStock = false;
-    this.showTransHist = false;
-    this.showEmpList = false;
+    this.router.navigate(['AdminDashboard/cust'])
   }
 
   viewCarStock(){
-    // this.router.navigate(['car-stock'])
-    this.showCust = false;
-    this.showCarStock = true;
-    this.showTransHist = false;
-    this.showEmpList = false;
+    this.router.navigate(['AdminDashboard/car'])
   }
 
   transHistory(){
-    // this.router.navigate(['transhistory'])
-    this.showCust = false;
-    this.showCarStock = false;
-    this.showTransHist = true;
-    this.showEmpList = false;
+    this.router.navigate(['AdminDashboard/trans'])
   }
 
   addEmployee(){
@@ -56,10 +37,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   vieEmpList(){
-    // this.router.navigate(['emplisting'])
-    this.showCust = false;
-    this.showCarStock = false;
-    this.showTransHist = false;
-    this.showEmpList = true;
+    this.router.navigate(['AdminDashboard/emplist'])
   }
 }

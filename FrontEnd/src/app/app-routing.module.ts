@@ -119,10 +119,6 @@ const routes: Routes = [
   {
     path:'custdetails',
     component:CustdetailsComponent
-  },
-  {
-    path:'car-stock',
-    component:CarStockComponent
   }
 ];
 

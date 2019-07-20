@@ -18,22 +18,22 @@ export class ConnectService {
 
   Getemployee() {
     let urilink = "/employee";
-    return this._http.get<Employee>(this.uri + urilink);
+    return this._http.get<Employee[]>(this.uri + urilink);
   }
 
   Getcust() {
     let urilink = "/customer";
-    return this._http.get<Customer>(this.uri + urilink);
+    return this._http.get<Customer[]>(this.uri + urilink);
   }
 
   Getcar() {
     let urilink = "/car";
-    return this._http.get<Car>(this.uri + urilink);
+    return this._http.get<Car[]>(this.uri + urilink);
   }
 
   Gettrans() {
     let urilink = "/transact";
-    return this._http.get(this.uri + urilink);
+    return this._http.get<string[]>(this.uri + urilink);
   }
 
 }

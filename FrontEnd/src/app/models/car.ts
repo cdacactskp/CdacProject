@@ -2,22 +2,24 @@ export class Car {
     carId:Number;
     Model:string;
     color:string;
-    Year:Number;
-    Rate:Number;
-    Manufacture:string;
-    Type:string;
-    Sale:string;
+    year:Number;
+    rate:Number;
+    Manufacturer:string;
+    type:string;
+    sale:string;
+    custId:Number;
     
 
-    constructor ( id:Number, mod:string,color:string, yr:Number, rte:Number, manfac: string, type:string, sale:string )
+    constructor ( id:Number, mod:string,color:string, yr:Number, rte:Number, manfac: string, type:string, sale:string, cust:Number )
     {
         this.carId=id;
         this.Model=mod;
         this.color=color;
-        this.Year=yr;
-        this.Rate=rte;
-        this.Manufacture=manfac;
-        this.Type=type;
-        this.Sale=sale;
+        this.year=yr;
+        this.rate=rte;
+        this.Manufacturer=manfac;
+        this.type=type;
+        this.sale=sale;
+        this.custId=cust
     }
 }

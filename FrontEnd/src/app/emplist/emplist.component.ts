@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee';
 import { ModeldataService } from 'app/services/modeldata.service';
+import { ConnectService } from 'app/services/connect.service';
 
 @Component({
   selector: 'app-emplist',
@@ -8,17 +9,23 @@ import { ModeldataService } from 'app/services/modeldata.service';
   styleUrls: ['./emplist.component.css']
 })
 export class EmplistComponent implements OnInit {
-
+emp:Employee[];
   modeldata: Array<Employee>;
-  constructor(private modelService : ModeldataService) { }
+  constructor(private modelService : ModeldataService,private _connect:ConnectService) { }
 
   ngOnInit() {
-    this.modeldata=this.employeeList();
+    return this._connect.Getemployee().subscribe((data) => {
+
+      console.log(data);
+
+      this.emp = data;
+
+    });
   }
-  employeeList()
-  {
-      return this.modelService.employeeList();
-  }
+  // employeeList()
+  // {
+  //     return this.modelService.employeeList();
+  // }
   delete(client: any) {
     console.log(client);
     

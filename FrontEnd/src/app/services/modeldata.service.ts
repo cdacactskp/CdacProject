@@ -15,10 +15,10 @@ export class ModeldataService {
 
     var statuses: carStock = [
 
-      new Car(1001, "Ritz", "white", 2011, 30000, "Maruhti", "sport", "y"),
-      new Car(1002, "Innova", "white", 2017, 200000, "Toyota", "sport", "y"),
-      new Car(1003, "Corolla", "gold-brown", 2015, 130000, "Toyaota", "sedan", "y"),
-      new Car(1005, "Amaze", "Black", 2014, 200000, "Honda", "hatchback", "y")
+      new Car(1001, "Ritz", "white", 2011, 30000, "Maruhti", "sport", "y",1),
+      new Car(1002, "Innova", "white", 2017, 200000, "Toyota", "sport", "y",2),
+      new Car(1003, "Corolla", "gold-brown", 2015, 130000, "Toyaota", "sedan", "y",3),
+      new Car(1005, "Amaze", "Black", 2014, 200000, "Honda", "hatchback", "y",4)
     ]
     return statuses;
   }

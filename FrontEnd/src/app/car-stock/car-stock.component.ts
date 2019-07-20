@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/car';
 import { ModeldataService } from '../services/modeldata.service';
 import { Router } from '@angular/router';
+import { ConnectService } from 'app/services/connect.service';
 
 @Component({
   selector: 'app-car-stock',
@@ -9,17 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./car-stock.component.css']
 })
 export class CarStockComponent implements OnInit {
+  emp:Car[];
   modeldata: Array<Car>;
-  constructor(private modelService : ModeldataService,private router:Router) { }
+  constructor(private modelService : ModeldataService,private _connect:ConnectService,private router:Router) { }
   
   ngOnInit() {
-    this.modeldata=this.call();
-    //console.log("model data running");
+    return this._connect.Getcar().subscribe((data) => {
+
+      console.log(data);
+
+      this.emp = data;
+  });
   }
-  call()
-  {
-      return this.modelService.call();
-  }
+  
+  // call()
+  // {
+  //     return this.modelService.call();
+  // }
   searchCar()
   {
     this.router.navigate(['search']);

@@ -34,7 +34,7 @@ app.use(bodyparser.json());
 var mysqlConnection = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'root',
+    password:'PASSWORD',
     database:'carbejdo'
 });
 
@@ -224,7 +224,7 @@ app.get('/custdetail', function (req, res) {
 
   // view transaction
   app.get('/transact',(req,res)=>{
-    mysqlConnection.query('SELECT customer.custId,customer.Fname,customer.Lname,car.carId,car.Model,car.rate,car.sale FROM customer join car on customer.custId=car.custId',(err,rows)=>{
+    mysqlConnection.query('SELECT * FROM invoice',(err,rows)=>{
         if(!err)
         res.send(rows);
         else

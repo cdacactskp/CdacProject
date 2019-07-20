@@ -11,12 +11,11 @@
      <th>Email</th> 
      <th>  Salary</th>
      <th>Age</th> 
-    <th>Qualification</th>
        
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of modeldata; let i = index">    
+        <tr *ngFor="let item of emp; let i = index">    
         <td>{{item.empId}}</td>  
         <td>{{item.Name}}</td> 
         <td>{{item.Designation}}</td> 
@@ -24,8 +23,7 @@
         <td>{{item.Address}}</td> 
         <td>{{item.Email}}</td>
         <td>{{item.Salary}}</td> 
-        <td>{{item.Age}}</td> 
-        <td>{{item.Qualification}}</td> 
+        <td>{{item.Age}}</td>  
         <td>
       <button class='btn btn-danger' (click)='delete(item)'>
         Delete

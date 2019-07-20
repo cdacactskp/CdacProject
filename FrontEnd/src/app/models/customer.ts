@@ -8,7 +8,7 @@ export class Customer
     Status:string;
     Email:string;
     
-    constructor ( id:Number,FName:string,  LName:string, ContactNo:Number, Address:string, Status:string, Email:string )
+    constructor( id:Number,FName:string,  LName:string, ContactNo:Number, Address:string, Status:string, Email:string )
     {
         this.custId=id;
         this.FName=FName;

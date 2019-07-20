@@ -36,4 +36,14 @@ export class ConnectService {
     return this._http.get<string[]>(this.uri + urilink);
   }
 
+  PostCust(cust : Customer){
+    let urilink = "/custdetail";
+    return this._http.post<number>(this.uri + urilink,cust);
+  }
+
+  GetCarSearch(x:string)
+  {
+    let urilink="/carsearch?Manufacturer="+x;
+    return this._http.get<Car[]>(this.uri+urilink);
+  }
 }

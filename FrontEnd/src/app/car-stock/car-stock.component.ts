@@ -10,25 +10,43 @@ import { ConnectService } from 'app/services/connect.service';
   styleUrls: ['./car-stock.component.css']
 })
 export class CarStockComponent implements OnInit {
-  emp:Car[];
+  emp: Car[];
   modeldata: Array<Car>;
-  constructor(private modelService : ModeldataService,private _connect:ConnectService,private router:Router) { }
-  
+
+  carModel: string;
+  color: string;
+  manufacturer: string;
+
+  constructor(private modelService: ModeldataService, private _connect: ConnectService, private router: Router) { }
+
   ngOnInit() {
     return this._connect.Getcar().subscribe((data) => {
 
       console.log(data);
 
       this.emp = data;
-  });
+    });
   }
-  
-  // call()
-  // {
-  //     return this.modelService.call();
-  // }
-  searchCar()
-  {
-    this.router.navigate(['search']);
+
+  searchCar() {
+    console.log("Car Stock " + this.carModel + " " + this.color + " " + this.manufacturer);
+    return this._connect.GetCarSearch(this.manufacturer).subscribe((data) => {
+      console.log(data);
+      this.emp = data;
+    })
+  }
+
+  clear(){
+
+    this.manufacturer = "";
+    this.color = "";
+    this.carModel ="";
+
+    return this._connect.Getcar().subscribe((data) => {
+
+      console.log(data);
+
+      this.emp = data;
+    });
   }
 }

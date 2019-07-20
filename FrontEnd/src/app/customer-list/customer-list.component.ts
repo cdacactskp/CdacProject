@@ -9,6 +9,7 @@ import { ConnectService } from 'app/services/connect.service';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
+  
 emp:Customer[];
   modeldata: Array<Customer>;
   constructor(private modelService : ModeldataService,private _connect:ConnectService) { }

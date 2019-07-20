@@ -11,3 +11,14 @@ h3
         margin:30px;
     
     }
+.bg-banner
+{
+background: url("../../../assets/home-bg1.jpg");
+height:90%;
+width:100%;
+}
+.bg-lwhite
+{
+  background-color:rgba(240, 245, 245, 0.76) ;
+  z-index: 1;
+}

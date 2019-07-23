@@ -16,7 +16,6 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { SearchComponent } from './search/search.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -44,7 +43,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule,
     ModalModule.forRoot(),
     FormsModule
   ],

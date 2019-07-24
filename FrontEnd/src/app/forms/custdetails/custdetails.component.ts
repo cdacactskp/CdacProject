@@ -12,33 +12,27 @@ import { Observable } from 'rxjs';
 
 export class CustdetailsComponent implements OnInit {
 
-  custId:Number;
-  FName:string;
-  LName:string;
-  ContactNo:Number;
-  Address:string;
-  Status:string;
-  Email:string;
+  custId: Number;
+  FName: string;
+  LName: string;
+  ContactNo: Number;
+  Address: string;
+  Status: string;
+  Email: string;
 
   cust: Customer;
   rows: Observable<number>;
-  constructor(private router: Router , private connect : ConnectService) {}
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   save(event: Event) {
-    event.preventDefault();
 
-    this.cust = new Customer( this.custId,this.FName,  this.LName, this.ContactNo, this.Address, this.Status, this.Email );
-    return this.connect.PostCust(this.cust).subscribe((data)=>{
-      console.log(data);
-    });
+    this.cust = new Customer(this.custId, this.FName, this.LName, this.ContactNo, this.Address, this.Status, this.Email);
 
     console.log("Cust Details" + JSON.stringify(this.cust));
-  }
 
-  Go() {
-    this.router.navigate(['cardetails'])
+    this.router.navigate(['cardetails'], { state: { data: this.cust } });
   }
 
   backClicked() {

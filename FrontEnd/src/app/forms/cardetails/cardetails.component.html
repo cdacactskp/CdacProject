@@ -1,41 +1,44 @@
 <h3>Car Details</h3>
 
 <div class="container">
-  <form (submit)="Entry($event)">
+  <form #carDetails = "ngForm" (submit)="Entry($event , carDetails.value)">
     <div class="row row-margin">
       <div class="col-sm-3">
         <label>carID</label>
-        <input type="text">
+        <input type="number" name="carId" ngModel>
       </div>
       <div class="col-sm-3">
         <label>Model</label>
-        <input type="text">
+        <input type="text" name="model" ngModel>
       </div>
       <div class="col-sm-3">
-        <label>color</label>
-        <input type="text">
+        <label>Color</label>
+        <input type="text" name="color" ngModel>
       </div>
       <div class="col-sm-3">
         <label>Year</label>
-        <input type="date">
+        <input type="number" name="year" ngModel>
       </div>
     </div>
     <div class="row row-margin">
       <div class="col-sm-3">
         <label>Rate</label>
-        <input type="text">
+        <input type="number" name="rate" ngModel>
       </div>
       <div class="col-sm-3">
         <label>Manufacture</label>
-        <input type="text">
+        <input type="text" name="manufacturer" ngModel>
       </div>
       <div class="col-sm-3">
         <label>Type</label>
-        <input type="text">
+        <input type="text" name="type" ngModel>
       </div>
       <div class="col-sm-3">
         <label>Sale(B/S)</label>
-        <input type="text">
+        <select name="sale" ngModel>
+          <option>Buy</option>
+          <option>Sell</option>
+        </select>
       </div>
     </div>
     <div class="row row-margin center">
@@ -45,5 +48,4 @@
 </div>
 
 <a (click)="backClicked()">
-    <-Back
-  </a> 
+  <-Back </a>

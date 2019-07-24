@@ -11,7 +11,6 @@ export class Employee {
     password: string;
     type: string;
 
-
     constructor(empId: Number, Name: string, Designation: string, ContactNo: Number, Address: string, Email: string, Salary: Number, Age: Number, userId: string, password: string, type: string) {
         this.empId = empId;
         this.Name = Name;

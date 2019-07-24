@@ -36,9 +36,9 @@ export class ConnectService {
     return this._http.get<string[]>(this.uri + urilink);
   }
 
-  PostCust(cust : Customer){
-    let urilink = "/custdetail";
-    return this._http.post<number>(this.uri + urilink,cust);
+  PostCust(cust : Customer , car : Car){
+    let urilink = "/invoice";
+    return this._http.post<string>(this.uri + urilink,{"cust" : cust , "car" : car});
   }
 
   GetCarSearch(x:string)

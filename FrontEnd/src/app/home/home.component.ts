@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModeldataService } from 'app/services/modeldata.service';
 import { Car } from 'app/models/car';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -22,19 +21,13 @@ export class HomeComponent implements OnInit {
   emp: Employee;
 
 
-  constructor(private modelService: ModeldataService,
-    private router: Router,
+  constructor(private router: Router,
     private employee: EmployeeService,
     private _connect: ConnectService) { }
 
 
   ngOnInit() {
-    this.modeldata = this.call();
     //console.log("model data running");
-  }
-
-  call() {
-    return this.modelService.call();
   }
 
   searchCar() {

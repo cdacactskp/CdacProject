@@ -1,3 +1,5 @@
+<div class="bg-banner">
+<div class="bg-lwhite">
 <h3>Car Details</h3>
 
 <div class="container">
@@ -34,18 +36,18 @@
         <input type="text" name="type" ngModel>
       </div>
       <div class="col-sm-3">
-        <label>Sale(B/S)</label>
+        <label>Sale(Yes/No)</label>
         <select name="sale" ngModel>
-          <option>Buy</option>
-          <option>Sell</option>
+          <option>y</option>
+          <option>n</option>
         </select>
       </div>
     </div>
     <div class="row row-margin center">
-      <input class="smt button btn-success col-sm-4" type="submit" value="submit">
+        <input class="smt button btn-success col-sm-6" (click)="backClicked()" type="button" value="Back">
+      <input class="smt button btn-success col-sm-6" type="submit" value="submit">
     </div>
   </form>
 </div>
 
-<a (click)="backClicked()">
-  <-Back </a>
+</div></div>

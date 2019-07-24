@@ -1,6 +1,8 @@
 
+<div class="bg-banner">
+<div class="container bg-lwhite">
 <h3>Customer Details</h3>
-<div class="container">
+
 <form (submit)="save($event)">
     <div class="row row-margin">
         <div class="col-sm-3">
@@ -43,14 +45,12 @@
                         </div> 
                         </div>
                       </div>
-                        <div class="row row-margin center">
-                          
+                      <input class="button btn-success col-sm-6" (click)="backClicked()" type="button" value="Back">        
        <input class="button btn-success col-sm-6" type="submit" value="Next">                     
     
-  </div>
+  
 </form>
 
 
-<a (click)="backClicked()">
-    <-Back
-  </a> 
+</div>
+</div>

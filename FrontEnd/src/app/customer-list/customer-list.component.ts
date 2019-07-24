@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ModeldataService} from "../services/modeldata.service";
 import { Customer } from '../models/customer';
 import { ConnectService } from 'app/services/connect.service';
 
@@ -12,7 +11,7 @@ export class CustomerListComponent implements OnInit {
   
 emp:Customer[];
   modeldata: Array<Customer>;
-  constructor(private modelService : ModeldataService,private _connect:ConnectService) { }
+  constructor(private _connect:ConnectService) { }
 
   ngOnInit() {
     return this._connect.Getcust().subscribe((data) => {

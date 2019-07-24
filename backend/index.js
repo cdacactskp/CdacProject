@@ -175,9 +175,6 @@ app.get('/invoice', bodyparser, (req, res) => {
 });
 
 
-
-
-
 // get customers
 app.get('/customer', (req, res) => {
   mysqlConnection.query('SELECT * FROM customer', (err, rows) => {
@@ -189,34 +186,77 @@ app.get('/customer', (req, res) => {
 });
 
 //insert customer
-app.post('/custdetail', function (req, res) {
+app.post('/invoice', function (req, res) {
 
-  console.log("/custdetails  called");
+  console.log("/invoice  called");
   console.log(req.body);
+  var flag = 0;
 
-
-  var custId = req.body.custId;
-  var Fname = req.body.FName;
-  var Lname = req.body.LName;
-  var ContactNo = req.body.ContactNo;
-  var Address = req.body.Address;
-  var Status = req.body.Status;
-  var Email = req.body.Email;
+  var custId = req.body.cust.custId;
+  var Fname = req.body.cust.FName;
+  var Lname = req.body.cust.LName;
+  var ContactNo = req.body.cust.ContactNo;
+  var Address = req.body.cust.Address;
+  var Status = req.body.cust.Status;
+  var Email = req.body.cust.Email;
 
   var result = "";
 
+  mysqlConnection.query('INSERT INTO customer values(?,?,?,?,?,?)', [custId, Fname, Lname, ContactNo, Address, Email], (err, rs) => {
+    if(err) {
+      result = "not ok";
+      console.log(err);
+    }else {
+      result = rs.affectedRows;
+      console.log("/invoice  " + result);
+      flag++;
+    }
 
-  mysqlConnection.query('INSERT INTO customer values(?,?,?,?,?,?,?)', [custId, Fname, Lname, ContactNo, Address, Status, Email], (err, rs) => {
+  });
+
+  var carId = req.body.car.carId;
+  var model = req.body.car.model;
+  var color = req.body.car.color;
+  var year = req.body.car.year;
+  var rate = req.body.car.rate;
+  var manufacturer = req.body.car.manufacturer;
+  var type = req.body.car.type;
+  var sale = req.body.car.sale;
+
+  var result = "";
+  mysqlConnection.query('INSERT INTO car values(?,?,?,?,?,?,?,?,?)', [carId, model, color, year, rate, manufacturer, type, sale, custId], (err, rs) => {
+
     if (err) {
       result = "not ok";
       console.log(err);
-    } else {
+    }else {
       result = rs.affectedRows;
-      console.log("/custdetails  " + result);
+      console.log(result);
+      flag++;
     }
-    res.send(result);
+  });
+
+  var today = new Date();
+  var inviocedate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+  mysqlConnection.query("INSERT INTO invoice ( inviocedate,empId,carId,custId,rate) values(?,?,?,?,?)", [inviocedate,1000, carId, custId, rate], (err, rs) => {
+    if (err) {
+      result = "not ok";
+      console.log(err);
+    }
+    else {
+      result = rs.affectedRows;
+      console.log(result);
+      flag++;
+    }
+
+    if (flag == 3) {
+      res.send("ok it worked");
+      flag = 0;
+    }
 
   });
+
   //connection.end();
 });
 

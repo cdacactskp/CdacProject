@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/car';
-import { ModeldataService } from '../services/modeldata.service';
 import { Router } from '@angular/router';
 import { ConnectService } from 'app/services/connect.service';
 
@@ -17,7 +16,7 @@ export class CarStockComponent implements OnInit {
   color: string;
   manufacturer: string;
 
-  constructor(private modelService: ModeldataService, private _connect: ConnectService, private router: Router) { }
+  constructor(private _connect: ConnectService, private router: Router) { }
 
   ngOnInit() {
     return this._connect.Getcar().subscribe((data) => {

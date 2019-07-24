@@ -17,7 +17,6 @@ export class CustdetailsComponent implements OnInit {
   LName: string;
   ContactNo: Number;
   Address: string;
-  Status: string;
   Email: string;
 
   cust: Customer;
@@ -28,7 +27,7 @@ export class CustdetailsComponent implements OnInit {
 
   save(event: Event) {
 
-    this.cust = new Customer(this.custId, this.FName, this.LName, this.ContactNo, this.Address, this.Status, this.Email);
+    this.cust = new Customer(this.custId, this.FName, this.LName, this.ContactNo, this.Address, this.Email);
 
     console.log("Cust Details" + JSON.stringify(this.cust));
 

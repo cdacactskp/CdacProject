@@ -38,9 +38,9 @@ export class CardetailsComponent implements OnInit {
     this.car = new Car(data.carId , data.model , data.color , data.year , data.rate , data.manufacturer , data.type , data.sale , this.cust.custId);
     console.log("my car model"+JSON.stringify(this.car));
 
-    // return this.connect.PostCust(this.cust).subscribe((data)=>{
-    //   console.log(data);
-    // });
+    return this.connect.PostCust(this.cust , this.car).subscribe((data)=>{
+      console.log("invoice : "+data);
+    });
 
   }
 

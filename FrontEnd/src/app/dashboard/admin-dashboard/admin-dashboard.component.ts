@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ConnectService } from 'app/services/connect.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ConnectService } from 'app/services/connect.service';
 export class AdminDashboardComponent implements OnInit {
 
 
-  constructor(private router:Router,private _connect:ConnectService) { }
+  constructor(private router:Router,private _connect:ConnectService, private route : ActivatedRoute) { }
 
   ngOnInit() {
     console.log("admin dashboard");
@@ -21,15 +21,15 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   viewCust(){
-    this.router.navigate(['AdminDashboard/cust'])
+    this.router.navigate([{ outlets: { sub: ['cust'] } }], {relativeTo: this.route});
   }
 
   viewCarStock(){
-    this.router.navigate(['AdminDashboard/car'])
+    this.router.navigate([{ outlets: { sub: ['car'] } }], {relativeTo: this.route});
   }
 
   transHistory(){
-    this.router.navigate(['AdminDashboard/trans'])
+    this.router.navigate([{ outlets: { sub: ['trans'] } }], {relativeTo: this.route});
   }
 
   addEmployee(){
@@ -37,6 +37,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   vieEmpList(){
-    this.router.navigate(['AdminDashboard/emplist'])
+    this.router.navigate([{ outlets: { sub: ['emplist'] } }], {relativeTo: this.route});
   }
 }

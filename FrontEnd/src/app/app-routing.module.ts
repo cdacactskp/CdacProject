@@ -25,42 +25,24 @@ const routes: Routes = [
         path: '',
         component: CarStockComponent,
         outlet: 'sub'
-      }
-    ] 
-  },
-  { 
-    path: 'AdminDashboard/car', 
-    redirectTo:'AdminDashboard',
-    pathMatch:'full' 
-  },
-  { 
-    path: 'AdminDashboard/cust', 
-    component: AdminDashboardComponent,
-    children: [
+      },
       {
-        path: '',
+        path: 'cust',
         component: CustomerListComponent,
         outlet: 'sub'
-      }
-    ] 
-  },
-  { 
-    path: 'AdminDashboard/trans', 
-    component: AdminDashboardComponent,
-    children: [
+      },
       {
-        path: '',
+        path: 'car',
+        component: CarStockComponent,
+        outlet: 'sub'
+      },
+      {
+        path: 'trans',
         component: TransHistoryComponent,
         outlet: 'sub'
-      }
-    ] 
-  },
-  { 
-    path: 'AdminDashboard/emplist', 
-    component: AdminDashboardComponent,
-    children: [
+      },
       {
-        path: '',
+        path: 'emplist',
         component: EmplistComponent,
         outlet: 'sub'
       }
@@ -74,31 +56,19 @@ const routes: Routes = [
         path: '',
         component: CarStockComponent,
         outlet: 'sub'
-      }
-    ] 
-  },
-  { 
-    path: 'EmployeeDashboard/car', 
-    redirectTo:'EmployeeDashboard',
-    pathMatch:'full' 
-  },
-  { 
-    path: 'EmployeeDashboard/cust', 
-    component: EmployeeDashboardComponent,
-    children: [
+      },
       {
-        path: '',
+        path: 'cust',
         component: CustomerListComponent,
         outlet: 'sub'
-      }
-    ] 
-  },
-  { 
-    path: 'EmployeeDashboard/trans', 
-    component: EmployeeDashboardComponent,
-    children: [
+      },
       {
-        path: '',
+        path: 'car',
+        component: CarStockComponent,
+        outlet: 'sub'
+      },
+      {
+        path: 'trans',
         component: TransHistoryComponent,
         outlet: 'sub'
       }

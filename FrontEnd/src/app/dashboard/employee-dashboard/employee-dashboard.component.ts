@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -12,28 +12,29 @@ export class EmployeeDashboardComponent implements OnInit {
   showCarStock: boolean;
   showTransHist: boolean;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router , private route: ActivatedRoute) { }
 
   ngOnInit() {
     console.log("employee dashboard");
-    this.showCust = false;
-    this.showCarStock = true  ;
-    this.showTransHist = false;
   }
 
   newTrans(){
-    this.router.navigate(['custdetails'])
+    this.router.navigate(['custdetails']);
   }
 
   viewCust(){
-    this.router.navigate(['EmployeeDashboard/cust'])
+    // this.router.navigate(['EmployeeDashboard/cust'])
+    this.router.navigate([{ outlets: { sub: ['cust'] } }], {relativeTo: this.route});
   }
 
   viewCarStock(){
-    this.router.navigate(['EmployeeDashboard/car'])
+    // this.router.navigate(['EmployeeDashboard/car']);
+    this.router.navigate([{ outlets: { sub: ['car'] } }], {relativeTo: this.route});
   }
 
   transHistory(){
-    this.router.navigate(['EmployeeDashboard/trans'])
+    // this.router.navigate(['EmployeeDashboard/trans']);
+    
+    this.router.navigate([{ outlets: { sub: ['trans'] } }], {relativeTo: this.route});
   }
 }

@@ -197,22 +197,9 @@ app.post('/invoice', function (req, res) {
   var Lname = req.body.cust.LName;
   var ContactNo = req.body.cust.ContactNo;
   var Address = req.body.cust.Address;
-  var Status = req.body.cust.Status;
   var Email = req.body.cust.Email;
 
   var result = "";
-
-  mysqlConnection.query('INSERT INTO customer values(?,?,?,?,?,?)', [custId, Fname, Lname, ContactNo, Address, Email], (err, rs) => {
-    if(err) {
-      result = "not ok";
-      console.log(err);
-    }else {
-      result = rs.affectedRows;
-      console.log("/invoice  " + result);
-      flag++;
-    }
-
-  });
 
   var carId = req.body.car.carId;
   var model = req.body.car.model;
@@ -222,6 +209,29 @@ app.post('/invoice', function (req, res) {
   var manufacturer = req.body.car.manufacturer;
   var type = req.body.car.type;
   var sale = req.body.car.sale;
+
+  mysqlConnection.query('INSERT INTO customer values(?,?,?,?,?,?)', [custId, Fname, Lname, ContactNo, Address, Email], (err, rs) => {
+    if(err) {
+      result = "not ok";
+      console.log(err);
+    }else {
+      result = rs.affectedRows;
+      console.log("/invoice  " + result);
+      flag++;
+
+      mysqlConnection.query('INSERT INTO car values(?,?,?,?,?,?,?,?,?)', [carId, model, color, year, rate, manufacturer, type, sale, custId], (err, rs) => {
+
+        if (err) {
+          result = "not ok";
+          console.log(err);
+        }else {
+          result = rs.affectedRows;
+          console.log(result);
+          flag++;
+        }
+      });
+    }
+  });
 
   var result = "";
   mysqlConnection.query('INSERT INTO car values(?,?,?,?,?,?,?,?,?)', [carId, model, color, year, rate, manufacturer, type, sale, custId], (err, rs) => {

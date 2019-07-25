@@ -11,11 +11,6 @@ export class ConnectService {
   constructor(private _http: HttpClient) { }
   uri = 'http://localhost:3000';
 
-  Getlogin(x: String, y: String) {
-    let urilink = "/login";
-    return this._http.post<Employee>(this.uri + urilink, { "userId": x, "password": y });
-  }
-
   Getemployee() {
     let urilink = "/employee";
     return this._http.get<Employee[]>(this.uri + urilink);

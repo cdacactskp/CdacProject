@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Employee } from 'app/models/employee';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,31 +10,17 @@ import { BehaviorSubject } from 'rxjs';
 export class EmployeeService {
   private isEmployeeLoggedIn;
   private isAdminLoggedIn;
-  private username;
   public login = new BehaviorSubject(false);
 
-  constructor() {
+  constructor(private _http: HttpClient) {
     this.isEmployeeLoggedIn = false;
-    this.isAdminLoggedIn = false;
+    this.isAdminLoggedIn = false; 
   }
+  
+  uri = 'http://localhost:3000';
 
-  public setEmployeeLoggedIn() {
-    this.isEmployeeLoggedIn = true;
-    this.login.next(true);
-    console.log("emp loged in");
-  }
-
-  public getEmployeeloggedIn() {
-    return this.isEmployeeLoggedIn;
-  }
-
-  public getAdminLoggedIn() {
-    return this.isAdminLoggedIn;
-  }
-
-  public setAdminLoggedIn() {
-    console.log("admin logged in");
-    this.isAdminLoggedIn = true;
-    this.login.next(true);
+  Getlogin(x: String, y: String) {
+    let urilink = "/login";
+    return this._http.post<Employee>(this.uri + urilink, { "userId": x, "password": y });
   }
 }

@@ -4,15 +4,13 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 import { CarStockComponent } from 'app/shared/car-stock/car-stock.component';
 import { CustomerListComponent } from 'app/shared/customer-list/customer-list.component';
 import { TransHistoryComponent } from 'app/shared/trans-history/trans-history.component';
+import { EmpdetailsComponent } from 'app/admin/empdetails/empdetails.component';
+import { CardetailsComponent } from './cardetails/cardetails.component';
+import { CustdetailsComponent } from './custdetails/custdetails.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: "EmployeeDashboard",
-    pathMatch: "full"
-  },
-  {
-    path: 'EmployeeDashboard',
     component: EmployeeDashboardComponent,
     children: [
       {
@@ -35,7 +33,16 @@ const routes: Routes = [
         component: TransHistoryComponent,
         outlet: 'sub'
       }]
-  }];
+  },
+  {
+    path:'cardetails',
+    component:CardetailsComponent
+  },
+  {
+    path:'custdetails',
+    component:CustdetailsComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

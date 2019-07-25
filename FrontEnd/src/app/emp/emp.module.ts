@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 import { EmpRoutingModule } from './emp-routing.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
-import { CustdetailsComponent } from '../shared/custdetails/custdetails.component';
+import { CustdetailsComponent } from './custdetails/custdetails.component';
+import { CardetailsComponent } from './cardetails/cardetails.component';
 
 @NgModule({
   declarations: [
-    EmployeeDashboardComponent
+    EmployeeDashboardComponent,
+    CardetailsComponent,
+    CustdetailsComponent
   ],
   imports: [
     CommonModule,

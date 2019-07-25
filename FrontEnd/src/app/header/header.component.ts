@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router , private empService : EmployeeService) { }
 
   ngOnInit() {
-    if(this.empService.getAdminLoggedIn() || this.empService.getEmployeeloggedIn()){
+    if(this.empService.login){
       this.login = true;
     }else{
       this.login = false;
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
       this.login = updatedLogin;
       console.log("login updated");
     });
-    console.log(this.empService.getAdminLoggedIn() +" "+this.empService.getEmployeeloggedIn() +" "+ this.login);
+    console.log("Header : "+this.empService.login +" "+ this.login);
   }
 
   openModalWithComponent() {

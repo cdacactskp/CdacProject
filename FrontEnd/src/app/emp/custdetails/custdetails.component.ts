@@ -31,7 +31,7 @@ export class CustdetailsComponent implements OnInit {
 
     console.log("Cust Details" + JSON.stringify(this.cust));
 
-    this.router.navigate(['cardetails'], { state: { data: this.cust } });
+    this.router.navigate(['EmployeeDashboard/cardetails'], { state: { data: this.cust } });
   }
 
   backClicked() {

@@ -15,24 +15,14 @@ import { Employee } from 'app/models/employee';
 export class HomeComponent implements OnInit {
 
   modeldata: Array<Car>;
-  login = new BehaviorSubject(false);
   username: string;
   password: string;
   emp: Employee;
 
-
   constructor(private router: Router,
-    private employee: EmployeeService,
-    private _connect: ConnectService) { }
+    private employee: EmployeeService) { }
 
-
-  ngOnInit() {
-    //console.log("model data running");
-  }
-
-  searchCar() {
-    this.router.navigate(['search']);
-  }
+  ngOnInit() { }
 
   user = "Employee";
 
@@ -44,34 +34,29 @@ export class HomeComponent implements OnInit {
     this.user = "Employee";
   }
 
-  getUser(value: string){
+  getUser(value: string) {
     this.username = value;
   }
 
-  getPass(value : string){
+  getPass(value: string) {
     this.password = value;
   }
 
   Login() {
-    this._connect.Getlogin(this.username, this.password).subscribe((data) => {
-
-      console.log(" Home : getlogin "+data);
+    this.employee.Getlogin(this.username, this.password).subscribe((data) => {
+      console.log(" Home : getlogin " + data);
 
       this.emp = data;
 
       if (this.user == "Admin") {
         if (this.emp[0].type == "admin") {
           console.log("Home : logging in admin");
-
-          this.employee.setAdminLoggedIn();
-          this.login.next(true);
+          this.employee.login.next(true);
           this.router.navigate(['AdminDashboard']);
         }
       } else if (this.user == "Employee") {
         if (this.emp[0].type == "emp") {
-
-          this.employee.setEmployeeLoggedIn();
-          this.login.next(true);
+          this.employee.login.next(true);
           this.router.navigate(['EmployeeDashboard']);
         }
       }

@@ -19,7 +19,7 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   newTrans(){
-    this.router.navigate(['custdetails']);
+    this.router.navigate(['EmployeeDashboard/custdetails']);
   }
 
   viewCust(){

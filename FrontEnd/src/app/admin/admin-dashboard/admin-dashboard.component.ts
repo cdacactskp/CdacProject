@@ -16,10 +16,6 @@ export class AdminDashboardComponent implements OnInit {
     console.log("admin dashboard");
   }
 
-  remEmp(){
-    this.router.navigate(['search'])
-  }
-
   viewCust(){
     this.router.navigate([{ outlets: { sub: ['cust'] } }], {relativeTo: this.route});
   }
@@ -33,7 +29,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   addEmployee(){
-    this.router.navigate(['empdetails'])
+    this.router.navigate(['AdminDashboard/empdetails'])
   }
 
   vieEmpList(){

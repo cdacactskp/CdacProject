@@ -7,19 +7,13 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { SearchComponent } from './search/search.component';
 import { TransHistoryComponent } from './trans-history/trans-history.component';
 import { FormsModule } from '@angular/forms';
-import { EmpdetailsComponent } from './empdetails/empdetails.component';
-import { CustdetailsComponent } from './custdetails/custdetails.component';
-import { CardetailsComponent } from './cardetails/cardetails.component';
 
 @NgModule({
   declarations: [
     CarStockComponent,
     CustomerListComponent,
     SearchComponent,
-    TransHistoryComponent,
-    EmpdetailsComponent,
-    CustdetailsComponent,
-    CardetailsComponent
+    TransHistoryComponent
   ],
   imports: [
     CommonModule,

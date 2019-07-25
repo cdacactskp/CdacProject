@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car';
 import { Router } from '@angular/router';
 import { ConnectService } from 'app/services/connect.service';
+import { Car } from 'app/models/car';
 
 @Component({
   selector: 'app-car-stock',
   templateUrl: './car-stock.component.html',
   styleUrls: ['./car-stock.component.css']
 })
+
 export class CarStockComponent implements OnInit {
   emp: Car[];
   modeldata: Array<Car>;

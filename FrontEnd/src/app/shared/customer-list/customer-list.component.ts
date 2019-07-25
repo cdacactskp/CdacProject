@@ -1,29 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../models/customer';
 import { ConnectService } from 'app/services/connect.service';
+import { Customer } from 'app/models/customer';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
+
 export class CustomerListComponent implements OnInit {
-  
-emp:Customer[];
+
+  emp: Customer[];
   modeldata: Array<Customer>;
-  constructor(private _connect:ConnectService) { }
+  constructor(private _connect: ConnectService) { }
 
   ngOnInit() {
-    return this._connect.Getcust().subscribe((data) => {
-
-      console.log(data);
-
+    this._connect.Getcust().subscribe((data) => {
+      console.log("Customer list : "+JSON.stringify(data));
       this.emp = data;
-  });
+    });
   }
-  // customerList()
-  // {
-  //     return this.modelService.customerList();
-  // }
 
 }

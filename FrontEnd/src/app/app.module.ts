@@ -2,40 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
-import { EmployeeDashboardComponent } from './dashboard/employee-dashboard/employee-dashboard.component';
-import { EmpdetailsComponent } from './forms/empdetails/empdetails.component';
-import { CardetailsComponent } from './forms/cardetails/cardetails.component';
-import { CustdetailsComponent } from './forms/custdetails/custdetails.component';
-import { TransHistoryComponent } from './trans-history/trans-history.component';
-import { CarStockComponent } from './car-stock/car-stock.component';
-import { EmplistComponent } from './emplist/emplist.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
-import { SearchComponent } from './search/search.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ModalModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AdminModule } from './admin/admin.module';
+import { EmpModule } from './emp/emp.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
-    AdminDashboardComponent,
-    EmployeeDashboardComponent,
-    EmpdetailsComponent,
-    CardetailsComponent,
-    CustdetailsComponent,
-    TransHistoryComponent,
-    CarStockComponent,
-    EmplistComponent,
-    CustomerListComponent,
-    SearchComponent,
     HeaderComponent,
     FooterComponent
   ],
@@ -43,8 +22,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ModalModule.forRoot(),
-    FormsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

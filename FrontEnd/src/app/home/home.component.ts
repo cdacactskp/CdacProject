@@ -55,13 +55,13 @@ export class HomeComponent implements OnInit {
   Login() {
     this._connect.Getlogin(this.username, this.password).subscribe((data) => {
 
-      console.log(data);
+      console.log(" Home : getlogin "+data);
 
       this.emp = data;
 
       if (this.user == "Admin") {
         if (this.emp[0].type == "admin") {
-          console.log("logging in admin");
+          console.log("Home : logging in admin");
 
           this.employee.setAdminLoggedIn();
           this.login.next(true);
@@ -70,7 +70,6 @@ export class HomeComponent implements OnInit {
       } else if (this.user == "Employee") {
         if (this.emp[0].type == "emp") {
 
-          console.log("logging in emp");
           this.employee.setEmployeeLoggedIn();
           this.login.next(true);
           this.router.navigate(['EmployeeDashboard']);

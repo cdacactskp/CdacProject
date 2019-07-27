@@ -28,7 +28,7 @@ export class CarStockComponent implements OnInit {
     });
   }
 
-  searchCar() {
+  searchCar(event : Event) {
     console.log("Car Stock " + this.carModel + " " + this.color + " " + this.manufacturer);
     return this._connect.GetCarSearch(this.manufacturer).subscribe((data) => {
       console.log(data);

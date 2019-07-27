@@ -8,20 +8,13 @@ import { Route, Router } from '@angular/router';
 })
 export class EmpdetailsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {  }
-
-
-  viewcust(){}
-viewcar(){}
-transactionhist(){}
-newtrans(){  
-  this.router.navigate(['custdetails'])
-}
-backClicked() {
-  javascript:history.go(-1);
-}
+  ngOnInit() { }
+  
+  backClicked() {
+    this.router.navigate(['AdminDashboard'])
+  }
 
 }
 

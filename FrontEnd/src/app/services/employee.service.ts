@@ -8,14 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class EmployeeService {
-  private isEmployeeLoggedIn;
-  private isAdminLoggedIn;
-  public login = new BehaviorSubject(false);
 
-  constructor(private _http: HttpClient) {
-    this.isEmployeeLoggedIn = false;
-    this.isAdminLoggedIn = false; 
-  }
+  public login = new BehaviorSubject(false);
+  emp : Employee;
+  
+  constructor(private _http: HttpClient) {}
   
   uri = 'http://localhost:3000';
 

@@ -3,32 +3,12 @@ const express = require('express');
 var app = express();
 require('dotenv').config();
 const bodyparser = require('body-parser');
-//var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const cors = require('cors');
 
 //---------------cross-orgin request---------//
 const allowedOrigins = process.env.allowedOrigins.split(',');
-app.use(cors()); //for access to all
-// app.use(cors({
-//     origin:function(origin,callback){
-//         if(!origin) return callback(null,true);
-//         if(allowedOrigins.indexOf(origin)===-1){
-//             var msg="the cors policy for this site does not allow access to specified origin";
-//             return callback(new Error(msg),false);
-//         }
-//         return callback(null,true);
-//     }
-// }));
-//----------------------------cross-origin---------//
-
-
-
-//----------------------------validate---------//
-//const valfunctions=require('./validators/validate');
-//----------------------------validate---------//
-
-
+app.use(cors()); 
 app.use(bodyparser.json());
 
 var mysqlConnection = mysql.createConnection({
